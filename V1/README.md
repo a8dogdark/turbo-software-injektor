@@ -6,4 +6,4 @@ se a programado el sistema completo con todos los bytes faltantes.
 
 Un proyecto realizado por Dogdark, Ascrnet, El wn de la Silla, Eags.
 
-se realizan mejoras
+version original a 600 baudios carga loader y 4000 baudios injektor
