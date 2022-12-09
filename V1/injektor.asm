@@ -406,7 +406,7 @@ LOINVIERTO
     DEY 
     CPY #$03
     BNE LOINVIERTO
-    RTS 
+    RTS
 ;
 ;
 ;
@@ -527,12 +527,14 @@ NUEVE9
 FINNUEVE
     LDA #$FF
     JSR BANQUEO
+;
     LDA #$CC    ;--------------
     STA $EBA3   ; BAUD RATE
     STA $FD41   ; NORMAL PARA
     LDA #$05    ; GRABACION DE
     STA $EBA8   ; ENCABEZADO
     STA $FD46   ;--------------
+;
     LDA #$08    ; FSK ON
     STA $EC26   ;--------------
 ;
@@ -549,8 +551,10 @@ FINNUEVE
     LDA #$00    ; PARA GRABAR
     STA $EBA8   ; PROGRAMAS
     STA $FD46   ;--------------
+;
     LDA #$00    ; FSK OFF
     STA $EC26   ;--------------
+;
     LDA #$00
     STA FEOF
     LDA # <(FIN-LOADERGAME)   ;4430-4000
@@ -636,7 +640,6 @@ WRITECASSETTE
     LDA $D01F
     CMP #$03
     BNE SIGAGRBANDO
-    ;JMP $FDD6
     RTS 
 SIGAGRBANDO
     LDY #$00
@@ -682,6 +685,7 @@ NOINCHIBIS
     BNE NOINCHIS
     INC $03
 NOINCHIS
+;
     LDA $03
     CMP CANTW+1
     BNE WRITECASSETTE
@@ -692,6 +696,7 @@ NOINCHIS
     BEQ FINP01
     BMI FINP01
     JMP GRABANDOP02
+;
 FINP01
     LDX $3D
     BEQ TERMINOWRITE
@@ -780,6 +785,7 @@ DATIX1
     .BY $80
     ORG $03EA+DIF
     .BYTE $00
+;
     ORG AGRABAR+$84
 GRABABLKUNO
     LDX FEOR
@@ -880,6 +886,7 @@ BLOCKOK
     STA $022F
     JSR ROMARAM
     JSR INSTALE ; BAUD RATE
+;
     LDA #$0C    ; POKE 764,12
     STA $02FC
     LDX $62     ; PAL FLAG
@@ -892,6 +899,7 @@ BLOCKOK
     STA $C61B   ; EOF
     STA $C61C
     STA $C61D
+;
     CLC         ; ESPACIO
     LDA 20      ; ENTRE 600
     ADC #120    ; Y 4K
