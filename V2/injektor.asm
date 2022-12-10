@@ -863,7 +863,8 @@ SAVEFALSO
     DEX 
     BPL SAVEFALSO
     JSR $E459
-    RTS 
+    RTS
+
 CHKSUM
     .BY 0
 DATA1
