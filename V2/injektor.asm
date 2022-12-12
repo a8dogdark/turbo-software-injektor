@@ -1,8 +1,10 @@
     ICL 'sistema.asm'
     ICL 'romram.asm'
     ICL 'macros.asm'
+;
 PRINTBYTE   = $F2B0
 GETBYTE     = $F2F8
+;valor baudio a 800
 B00800 = $0457  ;TIMER 800 BPS
 TURBO = $B3
     ORG $D301
